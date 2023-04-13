@@ -1,0 +1,63 @@
+##############################################
+# Coloring Map For （ ）
+##############################################
+##############################################
+# Classes and Objects (KEYWORD1)
+##############################################
+BMD31M090	KEYWORD1
+##############################################
+# Methods and Functions (KEYWORD2)
+##############################################
+begin	KEYWORD2
+clearDisplay	KEYWORD2
+display	KEYWORD2
+drawPixel	KEYWORD2
+drawLine	KEYWORD2
+drawFastHLine	KEYWORD2
+drawFastVLine	KEYWORD2
+drawChar	KEYWORD2
+drawString	KEYWORD2
+drawNum	KEYWORD2
+drawBitmap	KEYWORD2
+startScrollRight	KEYWORD2
+startScrollLeft	KEYWORD2
+stopScroll	KEYWORD2
+setFont	KEYWORD2
+setPixelRow	KEYWORD2
+dim	KEYWORD2
+invertDisplay	KEYWORD2
+
+##############################################
+# Constants (LITERAL1)
+##############################################
+BMD31M090_DEVICEADDR0	LITERAL1
+BMD31M090_DEVICEADDR1	LITERAL1
+BMD31M090_CLKFREQ	LITERAL1
+
+TRUE	LITERAL1
+FALSE	LITERAL1
+
+displayROW0	LITERAL1
+displayROW1	LITERAL1
+displayROW2	LITERAL1
+displayROW3	LITERAL1
+displayROW4	LITERAL1
+displayROW5	LITERAL1
+displayROW6	LITERAL1
+displayROW7	LITERAL1
+
+pixelColor_BLACK	LITERAL1
+pixelColor_WHITE	LITERAL1
+pixelColor_INVERSE	LITERAL1
+
+SCROLL_2FRAMES	LITERAL1
+SCROLL_3FRAMES	LITERAL1
+SCROLL_4FRAMES	LITERAL1
+SCROLL_5FRAMES	LITERAL1
+SCROLL_25FRAMES	LITERAL1
+SCROLL_64FRAMES	LITERAL1
+SCROLL_128FRAMES	LITERAL1
+SCROLL_256FRAMES	LITERAL1
+SCROLLV_NONE	LITERAL1
+SCROLLV_TOP	LITERAL1
+SCROLLV_BOTTOM	LITERAL1
