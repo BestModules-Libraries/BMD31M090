@@ -16,6 +16,7 @@ uint8_t t = ' ';
 
 BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire); //Please uncomment out this line of code if you use HW Wire on BMduino
 //BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire1); //Please uncomment out this line of code if you use HW Wire1 on BMduino
+//BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire2); //Please uncomment out this line of code if you use HW Wire1 on BMduino
 
 void setup()
 {
