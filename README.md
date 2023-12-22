@@ -25,7 +25,10 @@ Documentation
 Version History  
 -------------------
 
-* **V1.0.1** - Initial public release.
+* **V1.0.1**  
+&emsp;&emsp;- Initial public release.
+* **V1.0.2**  
+&emsp;&emsp;- Add new font format settable by 'setFont' function:FontTable_16X32 and FontTable_32X64
 
 License Information
 -------------------
