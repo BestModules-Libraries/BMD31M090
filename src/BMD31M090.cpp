@@ -1,9 +1,8 @@
 /*****************************************************************
 File:        BMD31M090.cpp
-Author:      BESTMODULES
+Author:      BEST MODULES CORP.
 Description: BMD31M090.cpp is the library for controlling the BMD31M090 OLED Module
-History:
-V1.0.2   --  2023-12-22
+Version:     V1.0.3   --  2025-05-29
 ******************************************************************/
 #include "BMD31M090.h"
 

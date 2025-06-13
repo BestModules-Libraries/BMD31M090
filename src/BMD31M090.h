@@ -1,9 +1,8 @@
 /*****************************************************************
 File:             BMD31M090.h
-Author:           BESTMODULES
+Author:           BEST MODULES CORP.
 Description:      Define classes and required variables
-History:         
-V1.0.2   --  2023-12-22
+Version:          V1.0.3   --  2025-05-29
 ******************************************************************/
 
 #ifndef _BMD31M090_H_

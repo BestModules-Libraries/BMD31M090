@@ -1,8 +1,8 @@
 /*****************************************************************
-File:         display.ino
-Description:  1.Wire interface (Clock Frequency: 400K) is used to communicate with BMD31M090.
+  File:         display.ino
+  Description:  1.Wire interface (Clock Frequency: 400K) is used to communicate with BMD31M090.
               2.Hardware Serial (BAUDRATE 115200) is used to communicate with Serial Port Monitor.
-connection method: sclPin:SCL(D19) sdaPin:SDA(D18)
+  connection method: sclPin:SCL(D19) sdaPin:SDA(D18)
 ******************************************************************/
 #include "BMD31M090.h"
 #include "Bitmap.h"
@@ -10,12 +10,12 @@ connection method: sclPin:SCL(D19) sdaPin:SDA(D18)
 #define BMD31M090_WIDTH   128        // BMD31M090 Module display width, in pixels
 #define BMD31M090_HEIGHT  64         // BMD31M090 Module display height, in pixels
 #define BMD31M090_ADDRESS 0x3C       // See Schematic "I2C Addr SEL" for address setting,
-                                     // The I2C address can configure: Addr0:0x3C ; Addr1:0x3D
+// The I2C address can configure: Addr0:0x3C ; Addr1:0x3D
 
 uint8_t t = ' ';
 
-BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire); //Please uncomment out this line of code if you use HW Wire on BMduino
-//BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire1); //Please uncomment out this line of code if you use HW Wire1 on BMduino
+//BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire); //Please uncomment out this line of code if you use HW Wire on BMduino
+BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire1); //Please uncomment out this line of code if you use HW Wire1 on BMduino
 //BMD31M090     BMD31(BMD31M090_WIDTH, BMD31M090_HEIGHT, &Wire2); //Please uncomment out this line of code if you use HW Wire1 on BMduino
 
 void setup()
@@ -68,7 +68,7 @@ void test_drawString_6x8(void)
   BMD31.setFont(FontTable_6X8); // Set Font Type - 6X8 (Default Font Type : 8X16)
 
   col = (128 - (6 * sizeof("Hello World!"))) / 2;
-  for (row=0; row<8; row++)
+  for (row = 0; row < 8; row++)
   {
     BMD31.drawString(col, row, (u8*)"Hello World!");
   }
@@ -85,7 +85,7 @@ void test_drawString_8x16(void)
   BMD31.setFont(FontTable_8X16); // Set Font Type - 8X16
 
   col = (128 - (8 * sizeof("Hello World!"))) / 2;
-  for (row=0; row<8; row+=2)
+  for (row = 0; row < 8; row += 2)
   {
     BMD31.drawString(col, row, (u8*)"Hello World!");
   }
@@ -114,16 +114,16 @@ void test_drawString_drawChar_drawNum(void)
     BMD31.drawChar(48, displayROW6, t);
     BMD31.drawNum(103, displayROW6, t, 3);
     delay(10);
-  } while(++t < '~');
-  t=' ';
+  } while (++t < '~');
+  t = ' ';
 }
 
 void test_drawPixel(void)
 {
   BMD31.clearDisplay();
-  for (uint8_t col=0; col<128; col++)
+  for (uint8_t col = 0; col < 128; col++)
   {
-    for(uint8_t row=0; row<64; row++)
+    for (uint8_t row = 0; row < 64; row++)
     {
       BMD31.drawPixel(col, row, pixelColor_WHITE);
     }
@@ -131,9 +131,9 @@ void test_drawPixel(void)
   BMD31.display();
   delay(500);
 
-  for (uint8_t col=0; col<128; col++)
+  for (uint8_t col = 0; col < 128; col++)
   {
-    for(uint8_t row=0; row<32; row++)
+    for (uint8_t row = 0; row < 32; row++)
     {
       BMD31.drawPixel(col, row, pixelColor_BLACK);
     }
@@ -141,9 +141,9 @@ void test_drawPixel(void)
   BMD31.display();
   delay(500);
 
-  for (uint8_t col=0; col<128; col++)
+  for (uint8_t col = 0; col < 128; col++)
   {
-    for(uint8_t row=0; row<64; row++)
+    for (uint8_t row = 0; row < 64; row++)
     {
       BMD31.drawPixel(col, row, pixelColor_INVERSE);
     }
@@ -158,7 +158,7 @@ void test_drawFastHLine_drawFastVLine(void)
 
   BMD31.clearDisplay();
   col = 112;
-  for (row=0; row<64; row+=8)
+  for (row = 0; row < 64; row += 8)
   {
     BMD31.drawFastHLine(0, row, col, pixelColor_WHITE);
     BMD31.drawFastVLine(col, row, 64 - row, pixelColor_WHITE);
@@ -169,7 +169,7 @@ void test_drawFastHLine_drawFastVLine(void)
 
   BMD31.clearDisplay();
   col = 112;
-  for (row=56; row>=0; row-=8)
+  for (row = 56; row >= 0; row -= 8)
   {
     BMD31.drawFastHLine(col, row, 128 - col, pixelColor_WHITE);
     BMD31.drawFastVLine(col, row, 64 - row, pixelColor_WHITE);
@@ -182,18 +182,18 @@ void test_drawFastHLine_drawFastVLine(void)
 void test_drawBitmap(void)
 {
   /*==========================================================
-   |Using Image2LCD Software conversion, setting as bellow    |
-   |1. Output file type: C array (*.c)                        |
-   |2. Scan mode: Horizon Scan                                |
-   |3. Bits Pixel: monochrome                                 |
-   |4. Max Width and Height: 128 (Width) / 64 (Height)        |
-   |5. Select "MSB First"                                     |
+    |Using Image2LCD Software conversion, setting as bellow    |
+    |1. Output file type: C array (*.c)                        |
+    |2. Scan mode: Horizon Scan                                |
+    |3. Bits Pixel: monochrome                                 |
+    |4. Max Width and Height: 128 (Width) / 64 (Height)        |
+    |5. Select "MSB First"                                     |
     ----------------------------------------------------------
-   |Using LCD Assistant Software conversion, setting as bellow|
-   |1. Byte orientation: Horizontal                           |
-   |2. Size: According your image size                        |
-   |3. Size endianness: Little                                |
-   |4. Pixels/byte: 8                                         |
+    |Using LCD Assistant Software conversion, setting as bellow|
+    |1. Byte orientation: Horizontal                           |
+    |2. Size: According your image size                        |
+    |3. Size endianness: Little                                |
+    |4. Pixels/byte: 8                                         |
     ==========================================================*/
 
   BMD31.clearDisplay();
